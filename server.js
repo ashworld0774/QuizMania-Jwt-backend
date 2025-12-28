@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors');  // ✅ Sirf 1 baar
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const API_BASE = 'http://localhost:4000';
@@ -8,21 +8,17 @@ let authToken = null;
 const app = express();
 const PORT = 4000;
 
-// CORS configuration
-const cors = require('cors');
-
+// CORS configuration - Sirf 1 baar!
 app.use(cors({
   origin: ['http://localhost:5500', 'https://quizmania-jwt-f.netlify.app'],
   credentials: true
 }));
 
-
 // IMPORTANT: real app me .env se lo
 const JWT_SECRET = 'super_secret_key_change_this';
 
 // middlewares
-app.use(cors());
-app.use(express.json());  
+app.use(express.json());
 
 function authMiddleware(req, res, next) {
   const authHeader = req.headers.authorization || '';
