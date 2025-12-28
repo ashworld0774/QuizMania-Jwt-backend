@@ -6,7 +6,7 @@ const API_BASE = 'http://localhost:4000';
 let authToken = null;
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 10000;
 
 // CORS configuration - Sirf 1 baar!
 app.use(cors({
