@@ -7,7 +7,6 @@ let authToken = null;
 
 const app = express();
 const PORT = 4000;
-const cors = require('cors');
 
 // CORS configuration
 const cors = require('cors');
